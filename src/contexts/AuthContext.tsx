@@ -46,7 +46,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       });
 
       const { permissions, roles, refreshToken, token } = response.data;
-
+      // estrategias de segurança
       // sessionStorage: armazena dados do usuario enquanto o navegador ou aba estiver aberto
       // localStorage: armazena dados do usuario apenas no lado do usuario (navegador)
       // cookies: armazena dados do usuario tanto para o lado do navegador quanto para o backend da aplicação
