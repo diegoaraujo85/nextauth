@@ -5,7 +5,10 @@ import { api } from '../services/api';
 export default function Dashboard() {
   const { isAuthenticated, user } = useContext(AuthContext);
   useEffect(() => {
-    api.get('/me').then(response => console.log(response.data));
+    api
+      .get('/me')
+      .then(response => console.log(response.data))
+      .catch(error => console.log(error));
   }, []);
 
   return (
