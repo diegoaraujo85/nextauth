@@ -9,10 +9,6 @@ interface CanProps {
 
 export function Can({ children, permissions, roles }: CanProps) {
   const userCanSeeComponent = useCan({ permissions, roles });
-  console.log(
-    '🚀 ~ file: Can.tsx ~ line 12 ~ Can ~ userCanSeeComponent',
-    userCanSeeComponent,
-  );
 
   if (!userCanSeeComponent) {
     return null;
