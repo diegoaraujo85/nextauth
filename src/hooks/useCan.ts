@@ -8,7 +8,7 @@ type UseCanParams = {
 
 export function useCan({permissions, roles}:UseCanParams){
   const {isAuthenticated, user} = useContext(AuthContext);
-
+  
   if(!isAuthenticated){
     return false;
   }
@@ -22,13 +22,13 @@ export function useCan({permissions, roles}:UseCanParams){
       return false;
     }
   }
-
+  
   if(roles?.length > 0){
-    const hasAllRoles = roles.some(role =>{
+    const hasSomeRole = roles.some(role =>{
       return user.roles.includes(role);
     });
     
-    if(!hasAllRoles){
+    if(!hasSomeRole){
       return false;
     }
   }
